@@ -1,0 +1,106 @@
+name: flutter_riverpod_template
+description: Cinnamon Agency template for Flutter Riverpod applications
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  ###
+  # Dependencies
+  ###
+  connectivity_plus: 2.3.9
+  device_info_plus: 6.0.0
+  dio: 4.0.6
+  geolocator: 9.0.2
+  intl: 0.17.0
+  just_audio: 0.9.29
+  location: 4.4.0
+  logger_fork: 1.2.0
+  logger_flutter_fork: 1.2.0
+  package_info_plus: 1.4.3+1
+  path_provider: 2.0.11
+  permission_handler: 10.0.2
+  url_launcher: 6.1.5
+  go_router: 5.1.0
+  flutter_dotenv: ^5.0.2
+
+  # Freezed
+  freezed_annotation: 2.2.0
+  json_serializable: 6.5.1
+
+  # UI
+  flutter_svg: 1.1.5
+  flutter_screenutil: 5.5.4
+  flutter_staggered_animations: 1.1.1
+  video_player: 2.4.7
+  google_fonts: 3.0.1
+  easy_localization: 3.0.1
+  cached_network_image: 3.2.2
+  shimmer: 2.0.0
+
+  # Riverpod
+  flutter_riverpod: 2.0.2
+
+  # Hive
+  hive: 2.2.3
+  hive_flutter: 1.1.0
+
+  # Firebase
+  firebase_core: 1.24.0
+  firebase_auth: 3.11.2
+  cloud_firestore: 3.5.1
+
+  # Auth
+  google_sign_in: 5.4.2
+  sign_in_with_apple: 4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+    
+  ###
+  # Dev Dependencies
+  ###
+  build_runner: 2.3.0
+  flutter_launcher_icons: 0.10.0
+  flutter_native_splash: 2.2.8
+  hive_generator: 1.1.3
+  freezed: 2.2.0
+
+# Trigger code generation
+# flutter packages pub run build_runner build --delete-conflicting-outputs
+
+# Configuration for 'flutter_launcher_icons'
+# Run icon generation with 'flutter pub run flutter_launcher_icons:main'
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'assets/icon.png'
+  adaptive_icon_background: '#FFFFFF'
+  adaptive_icon_foreground: 'assets/icon.png'
+
+# Configuration for 'flutter_native_splash'
+# Run splash screen generation with 'flutter pub run flutter_native_splash:create'
+flutter_native_splash:
+  android: true
+  ios: true
+  color: '#FFFFFF'
+  image: 'assets/icon.png'
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env
+    - assets/translations/
+    - assets/icons/
+    - assets/images/
+    - assets/movie_list.json
