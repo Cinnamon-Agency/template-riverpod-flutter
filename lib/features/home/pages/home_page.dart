@@ -112,7 +112,7 @@ class PaginationWidget extends ConsumerWidget {
                 if (ref.read(currentPageProvider) == 1) {
                   return;
                 }
-                ref.read(currentPageProvider.state).state--;
+                ref.read(currentPageProvider.notifier).state--;
                 ref.read(homeControllerProvider.notifier).getMovies();
               },
               icon: const Icon(Icons.chevron_left),
@@ -126,7 +126,7 @@ class PaginationWidget extends ConsumerWidget {
                 if (ref.read(currentPageProvider) == ref.read(totalPagesProvider)) {
                   return;
                 }
-                ref.read(currentPageProvider.state).state++;
+                ref.read(currentPageProvider.notifier).state++;
                 ref.read(homeControllerProvider.notifier).getMovies();
               },
               icon: const Icon(Icons.chevron_right),
