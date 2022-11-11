@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, must_be_immutable
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ Future<void> main() async {
         path: 'assets/translations',
         useOnlyLangCode: true,
         fallbackLocale: const Locale('en'),
-        child: const CinnamonRiverpodTemplateApp(),
+        child: CinnamonRiverpodTemplateApp(),
       ),
     ),
   );
@@ -63,7 +63,9 @@ Future<void> main() async {
 
 /// Starting point of our Flutter application
 class CinnamonRiverpodTemplateApp extends StatelessWidget {
-  const CinnamonRiverpodTemplateApp({super.key});
+  CinnamonRiverpodTemplateApp({super.key});
+
+  AppRouter? router;
 
   @override
   Widget build(BuildContext context) => ScreenUtilInit(
@@ -71,14 +73,14 @@ class CinnamonRiverpodTemplateApp extends StatelessWidget {
         designSize: const Size(412, 732),
         builder: (_, __) => Consumer(
           builder: (context, ref, child) {
-            final router = AppRouter(ref);
+            router ??= AppRouter(ref);
 
             return MaterialApp.router(
               onGenerateTitle: (_) => 'appName'.tr(),
               debugShowCheckedModeBanner: false,
-              routerDelegate: router.appRouter.routerDelegate,
-              routeInformationParser: router.appRouter.routeInformationParser,
-              routeInformationProvider: router.appRouter.routeInformationProvider,
+              routerDelegate: router!.appRouter.routerDelegate,
+              routeInformationParser: router!.appRouter.routeInformationParser,
+              routeInformationProvider: router!.appRouter.routeInformationProvider,
               theme: AppThemes.primary(),
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
