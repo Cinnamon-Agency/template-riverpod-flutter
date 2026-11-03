@@ -18,7 +18,7 @@ dependencies:
   ###
   connectivity_plus: 2.3.9
   device_info_plus: 6.0.0
-  dio: 4.0.6
+  dio: 5.0.0
   geolocator: 9.0.2
   intl: 0.17.0
   just_audio: 0.9.29
